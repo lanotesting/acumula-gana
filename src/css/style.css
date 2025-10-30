@@ -17,7 +17,8 @@ body{
     background-image: url('../img/form-box2.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 412px;
+    max-width: 412px;
+    width: 100%;
     min-height: 590px;
     border-radius: 15px 15px 0px 0px;
     padding: 140px 50px;
