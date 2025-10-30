@@ -16,17 +16,23 @@ body{
 .form-box{
     background-image: url('../img/form-box2.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    width: 100% !important;
     max-width: 412px;
-    width: 100%;
     min-height: 590px;
     border-radius: 15px 15px 0px 0px;
     padding: 140px 50px;
 }
 
+.form-label{
+    font-size: 0.8rem;
+    margin-bottom: 0px !important;
+}
+
 .form-control{
     background-color: rgba(255, 255, 255, 0.603);
     margin-bottom: 0px;
+    height: 30px;
 }
 
 form button{
