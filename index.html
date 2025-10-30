@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="src/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Mrs. Rush | ¡Acummula y Gana!</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="column col-12 col-md-6 col-lg-3 d-block vh-100 w-100 d-flex align-items-center justify-content-center">
+                <div class="form-box">
+                    <form id="register-client">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo eléctronico:</label>
+                            <input type="email" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" required>Teléfono:</label>
+                            <input type="text" class="form-control" name="phone" id="phone">
+                        </div>
+                        <button type="submit" class="btn btn-primary d-block mx-auto "><strong>¡Listo!</strong></button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
+
+
+    <script src="src/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('register-client').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita el envío tradicional del formulario
+            
+            // COPIA AQUÍ LA URL COMPLETA DE TU APPS SCRIPT
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxMMYRpJp4iNoQLtEPt3bHsGtx3LEtr9fhcKc5_bjghjgQaxNtQrIXPhCpTs03yAH7gWA/exec'; 
+            
+            const form = document.getElementById('register-client');
+            const formData = new FormData(form);
+
+            // Convertir FormData a URLSearchParams para enviarlo como POST
+            const data = new URLSearchParams(formData);
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json()) // Procesar la respuesta del script
+            .then(data => {
+                if (data.result === 'success') {
+                    alert('¡Gracias! Tu información ha sido enviada.');
+                    form.reset();
+                } else {
+                    alert('Hubo un error al enviar la información.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema de conexión.');
+            });
+        });
+    </script>
+</body>
+</html>

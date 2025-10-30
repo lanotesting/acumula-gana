@@ -1,0 +1,39 @@
+body{
+    background-image: url('../img/background.jpg');
+    background-repeat: repeat;
+    background-size: 300px;
+    overflow-y: hidden;
+}
+
+.container-fluid{
+    background-color: rgba(0, 0, 0, 0.432);
+}
+
+.column{
+    padding: 0px;
+}
+
+.form-box{
+    background-image: url('../img/form-box2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 412px;
+    min-height: 590px;
+    border-radius: 15px 15px 0px 0px;
+    padding: 140px 50px;
+}
+
+.form-control{
+    background-color: rgba(255, 255, 255, 0.603);
+    margin-bottom: 0px;
+}
+
+form button{
+    background-color: #d93674 !important;
+    border: 2px white !important;
+}
+
+label{
+    color: white;
+    font-weight: bold;
+}
